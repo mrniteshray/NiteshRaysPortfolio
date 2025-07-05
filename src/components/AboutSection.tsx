@@ -1,69 +1,89 @@
-
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Smartphone, Code, Laptop, Rocket } from 'lucide-react';
 
 const services = [
   {
     title: 'Modern Android Apps',
     description: 'Build elegant and scalable Android apps with Kotlin and Jetpack Compose',
-    icon: Smartphone
+    icon: Smartphone,
+    color: 'text-blue-500'
   },
   {
-    title: 'Clean Architecture & MVVM Implementation',
-    description: 'I structure apps with clean architecture, MVVM, and proper separation of concerns for better maintainability and testability',
-    icon: Code
+    title: 'Clean Architecture',
+    description: 'Structured apps with MVVM, clean architecture, and proper separation of concerns',
+    icon: Code,
+    color: 'text-emerald-500'
   },
   {
     title: 'Firebase Integration',
-    description: 'I implement real-time features using Firebase services like Authentication, Firestore, Cloud Messaging, and more.',
-    icon: Laptop
+    description: 'Implement real-time features with Authentication, Firestore, and Cloud Messaging',
+    icon: Laptop,
+    color: 'text-amber-500'
   },
   {
-    title: ' API Integration',
-    description: 'I connect apps with RESTful APIs using Retrofit, Coroutines, and handle data flow efficiently across layers',
-    icon: Rocket
+    title: 'API Integration',
+    description: 'Connect apps with RESTful APIs using Retrofit and efficient data flow patterns',
+    icon: Rocket,
+    color: 'text-purple-500'
   }
 ];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section bg-muted/30">
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
+    <section id="about" className="section bg-gradient-to-b from-muted/10 to-muted/20 py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="text-center mb-12">
+          <h2 className="section-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 inline-block">
+            About Me
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Passionate Android developer creating exceptional mobile experiences
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <p className="text-lg mb-4">
-            Hey, I’m Nitesh — a passionate Android Developer who specializes in building modern, clean mobile apps using Kotlin and Jetpack Compose. 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed text-foreground/90">
+              <span className="font-semibold text-primary">Hey, I'm Nitesh</span> — a passionate Android Developer specializing in building modern, clean mobile apps using Kotlin and Jetpack Compose.
             </p>
-            <p className="mb-4">
-            Over the time, I’ve worked on a variety of Android projects — from productivity tools to AI-based assistants — always with a focus on clean architecture, smooth UI/UX, and writing maintainable code. I enjoy working with modern tech stacks like Hilt, Coroutines, Firebase, and MVVM.
+            <p className="text-lg leading-relaxed text-foreground/90">
+              Over time, I've worked on diverse Android projects — from productivity tools to AI-based assistants — with a focus on clean architecture, smooth UI/UX, and maintainable code. I enjoy working with modern tech stacks like Hilt, Coroutines, Firebase, and MVVM.
             </p>
+            <div className="flex flex-wrap gap-2 mt-6">
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Kotlin</span>
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Jetpack Compose</span>
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Clean Architecture</span>
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Firebase</span>
+            </div>
           </div>
-          <div className="flex flex-col justify-center">
-            <Card>
-              <CardHeader>
-                <CardTitle>What I Do</CardTitle>
-                <CardDescription>My core services and expertise</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {services.map((service, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="mt-0.5 bg-primary/10 p-2 rounded-md text-primary">
-                        <service.icon size={18} />
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-sm">{service.title}</h3>
-                        <p className="text-xs text-muted-foreground">{service.description}</p>
-                      </div>
+          
+          <Card className="border border-muted-foreground/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold">My Expertise</CardTitle>
+              <CardDescription className="text-muted-foreground">
+                Core services and technical capabilities
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 gap-4">
+                {services.map((service, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-start p-4 rounded-lg hover:bg-muted/50 transition-colors duration-200 group"
+                  >
+                    <div className={`p-3 rounded-xl bg-gradient-to-br from-primary/10 to-${service.color}/10 mr-4 group-hover:scale-105 transition-transform`}>
+                      <service.icon className={`w-5 h-5 ${service.color}`} />
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                    <div>
+                      <h3 className="font-semibold text-lg text-foreground mb-1.5">{service.title}</h3>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

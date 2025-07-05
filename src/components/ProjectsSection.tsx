@@ -42,7 +42,7 @@ const ProjectGrid = ({ projects, githubUrl }) => (
         <Card key={index} className="project-card flex flex-col h-full">
             <div className="aspect-w-16 aspect-h-9 overflow-hidden">
               <img 
-                src={`/public/${project.image.toLowerCase().replace(/ /g, '')}.png`} 
+                src={`/${project.image.toLowerCase().replace(/ /g, '')}.png`} 
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />

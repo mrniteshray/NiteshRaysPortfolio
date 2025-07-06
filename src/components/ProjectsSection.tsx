@@ -46,7 +46,7 @@ const ProjectCard = ({ project }) => {
     >
       <div className="relative aspect-video overflow-hidden">
         <img 
-          src={`/public/${project.image.toLowerCase().replace(/ /g, '')}.png`} 
+          src={`/${project.image.toLowerCase().replace(/ /g, '')}.png`}
           alt={project.title}
           className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : 'scale-100'}`}
         />

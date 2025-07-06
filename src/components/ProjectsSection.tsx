@@ -25,6 +25,16 @@ const androidProjects = [
     downloadlink: "https://github.com/mrniteshray/ArogyaSathi/releases/download/v1/ArogyaSathi.apk"    
   },
   {
+    title: 'MyWallet',
+    longDesc: 'MyWallet is a personal finance tracking Android app designed to help users efficiently manage their expenses.',
+    image: 'mywallet',
+    tags: ['Kotlin','XML', 'Firebase','AndroidMP Chart Library','Google SignIn'],
+    github: 'https://github.com/mrniteshray/MyWallet',
+    playStoreUrl: undefined,
+    downloadlink: "https://github.com/mrniteshray/MyWallet/releases/download/v1/MyWallet.apk"    
+  }
+  ,
+  {
     title: 'HandWritefy',
     longDesc: 'Helps students and professionals save hours by generating realistic handwritten pages from digital text with customizable handwriting styles.',
     image: 'handwritefy',

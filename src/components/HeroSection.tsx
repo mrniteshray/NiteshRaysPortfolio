@@ -3,9 +3,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Audio files (import or use public paths)
-const typingSound = '/sounds/typing.mp3';
-const clickSound = '/sounds/click.mp3';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
@@ -25,8 +22,6 @@ const HeroSection = () => {
   useEffect(() => {
     // Only initialize on client-side
     if (typeof window !== 'undefined') {
-      typingAudioRef.current = new Audio(typingSound);
-      clickAudioRef.current = new Audio(clickSound);
 
       // Preload sounds
       typingAudioRef.current.load();

@@ -13,7 +13,7 @@ const androidProjects = [
     tags: ['Kotlin', 'Jetpack Compose', 'AccessibilityService API', 'MVVM', 'Coroutines'],
     github: 'https://github.com/mrniteshray/Blockit',
     playStoreUrl: undefined,
-    downloadlink: "https://github.com/mrniteshray/Blockit/releases/download/v1/Blockit.apk"
+    downloadlink: "https://github.com/mrniteshray/Blockit/releases/latest"
   },
   {
     title: 'ArogyaSathi',

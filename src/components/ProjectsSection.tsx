@@ -49,66 +49,63 @@ const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Card 
-      className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20"
+    <Card
+      className="flex flex-col md:flex-row items-stretch bg-card rounded-xl shadow-md overflow-hidden mb-10 transition-all duration-300 hover:shadow-xl hover:border-primary/30 border border-border max-w-[1200px] mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative aspect-video overflow-hidden">
-        <img 
-          src={`/${project.image.toLowerCase().replace(/ /g, '')}.png`}
-          alt={project.title}
-          className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : 'scale-100'}`}
-        />
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : ''}`}></div>
-      </div>
-      
-      <CardHeader>
-        <CardTitle className="text-2xl">{project.title}</CardTitle>
-        <CardDescription className="text-muted-foreground">{project.longDesc}</CardDescription>
-      </CardHeader>
-      
-      <CardContent className="flex-grow">
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, idx) => (
-            <Badge 
-              key={idx} 
-              variant="secondary" 
-              className="text-xs bg-secondary/50 hover:bg-secondary/70 transition-colors"
-            >
-              {tag}
-            </Badge>
-          ))}
+      {/* Image Section */}
+      <div className="md:w-[600px] w-full flex-shrink-0 flex items-center justify-center bg-muted/40 p-4 md:p-10 relative">
+  <div className="w-full aspect-[16/9] max-w-[1200px]">
+    <img
+      src={`/${project.image.toLowerCase().replace(/ /g, '')}.png`}
+      alt={project.title}
+      className={`rounded-lg shadow-lg object-cover w-full h-full transition-transform duration-500 ${isHovered ? 'scale-105' : 'scale-100'}`}
+    />
+  </div>
+  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ${isHovered ? 'opacity-100' : ''}`}></div>
+</div>
+      {/* Info Section */}
+      <div className="flex flex-col justify-between p-6 md:p-8 w-full">
+        <div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-2 text-foreground">{project.title}</h3>
+          <p className="text-base md:text-lg text-muted-foreground mb-4">{project.longDesc}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag, idx) => (
+              <Badge
+                key={idx}
+                variant="secondary"
+                className="text-xs bg-secondary/60 hover:bg-secondary/80 transition-colors"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
         </div>
-      </CardContent>
-      
-      <CardFooter className="flex flex-wrap gap-2 mt-auto">
-        <div className="flex gap-2 w-full">
+        <div className="flex flex-wrap gap-3 mt-4">
           {project.downloadlink && (
-            <Button variant="outline" size="sm" asChild className="flex-1">
+            <Button variant="outline" size="sm" asChild>
               <a href={project.downloadlink} target="_blank" rel="noopener noreferrer">
                 <Download size={16} className="mr-2" /> Download APK
               </a>
             </Button>
           )}
-          
           {project.github && (
-            <Button variant="outline" size="sm" asChild className="flex-1">
+            <Button variant="outline" size="sm" asChild>
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <Github size={16} className="mr-2" /> Code
               </a>
             </Button>
           )}
+          {project.playStoreUrl && (
+            <Button size="sm" asChild>
+              <a href={project.playStoreUrl} target="_blank" rel="noopener noreferrer">
+                <Play size={16} className="mr-2" /> Get on Play Store
+              </a>
+            </Button>
+          )}
         </div>
-        
-        {project.playStoreUrl && (
-          <Button size="sm" asChild className="w-full mt-2">
-            <a href={project.playStoreUrl} target="_blank" rel="noopener noreferrer">
-              <Play size={16} className="mr-2" /> Get on Play Store
-            </a>
-          </Button>
-        )}
-      </CardFooter>
+      </div>
     </Card>
   );
 };
@@ -116,7 +113,7 @@ const ProjectCard = ({ project }) => {
 const ProjectsSection = () => {
   return (
     <section id="projects" className="section bg-gradient-to-b from-muted/10 to-muted/20 py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         <div className="text-center mb-12">
           <h2 className="section-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 inline-block">
             Featured Projects
@@ -132,7 +129,7 @@ const ProjectsSection = () => {
           </TabsList>
           
           <TabsContent value="android">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="flex flex-col gap-8 mb-12">
               {androidProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}

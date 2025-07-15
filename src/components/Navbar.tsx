@@ -83,7 +83,7 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
-              <a href="/NiteshRayResume.pdf" download className="w-full"> <Button className="w-full">Resume</Button></a>
+              <a href="/Nitesh Resume.pdf" download className="w-full"> <Button className="w-full">Resume</Button></a>
             </div>
           </div>
         )}

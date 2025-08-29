@@ -3,7 +3,7 @@ export interface PortfolioData {
   title: string;
   bio: string;
   skills: string[];
-  
+  //
   projects: Array<{
     name: string;
     description: string;

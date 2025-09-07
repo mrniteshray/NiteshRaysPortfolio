@@ -19,53 +19,62 @@ export interface PrivacyPolicyData {
 export const privacyPolicies: Record<string, PrivacyPolicyData> = {
   blockit: {
     appName: "Blockit",
-    lastUpdated: "September 7, 2025",
+    lastUpdated: "August 24, 2025",
     content: {
-      introduction: "Blockit is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our distraction-blocking application. We believe in transparency and want you to understand exactly how your data is handled.",
+      introduction: "Welcome to Blockit! Your privacy is important to us. This policy explains how Blockit handles permissions and data to keep your experience safe, transparent, and focused.",
       dataCollection: [
-        "App usage patterns and blocking statistics (stored locally on your device)",
-        "Device information (Android version, device model for compatibility purposes)",
-        "Accessibility service permissions (required for app blocking functionality)",
-        "List of installed apps on your device (to provide blocking options)",
-        "Website and app blocking preferences and settings",
-        "Usage time and session duration for blocked apps"
+        "Blockit does not collect, store, or share any personal information",
+        "The app runs entirely offline and does not require login or account creation"
       ],
       dataUsage: [
-        "To provide core app and website blocking functionality",
-        "To generate personalized usage statistics and productivity reports",
-        "To improve app performance and user experience",
-        "To maintain your blocking preferences and custom settings",
-        "To send you productivity insights and recommendations",
-        "To ensure the app works correctly with different Android versions"
+        "All processing happens completely on your device",
+        "No data is transmitted over the internet or to external servers",
+        "Permissions are used only for core blocking functionality"
       ],
-      dataSharing: "Blockit does not share, sell, rent, or transmit your personal data to any third parties. All data collected by the app is processed and stored locally on your device. We do not collect or store any personal information on external servers or cloud services. Your privacy is our priority, and we have designed the app to function completely offline regarding your personal data.",
-      dataSecurity: "Your data security is of utmost importance to us. All data is stored locally on your device using Android's secure storage mechanisms and encryption standards. We implement industry-standard security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. The app requires minimal permissions and only accesses data necessary for its functionality.",
+      dataSharing: "Blockit does not collect, store, or share any personal information. The app runs entirely offline and does not require login or account creation. No personal data is logged, collected, shared, or monetized.",
+      dataSecurity: "Blockit functions completely on-device. It does not connect to any server, nor transmit data over the internet. All accessibility events are processed entirely on your device and are never collected, uploaded, sold, or shared with anyone.",
       userRights: [
-        "Access and review all your data through the app's settings and statistics sections",
-        "Export your usage data and statistics in a readable format",
-        "Delete all your data by clearing app data or uninstalling the application",
-        "Control which apps and websites can be monitored and blocked",
-        "Disable specific features that collect usage data at any time",
-        "Modify or delete your blocking preferences and custom settings",
-        "Opt out of usage analytics and productivity tracking features"
+        "You can revoke any permission at any time via system settings",
+        "The app continues to function (with limited features) even without some permissions",
+        "You can disable Accessibility permission in Android Settings under: Settings > Accessibility > Installed Services > Blockit > Disable"
       ],
-      contact: "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at niteshr14321@gmail.com. We are committed to addressing your privacy concerns promptly and transparently.",
+      contact: "If you have any questions or suggestions about this Privacy Policy, feel free to contact us at niteshr070104@gmail.com",
       additionalSections: [
         {
-          title: "Accessibility Service Usage",
-          content: "Blockit uses Android's Accessibility Service API to monitor and block access to distracting apps and websites. This service allows the app to detect when you try to open blocked applications and redirect you to a blocking screen. The accessibility service only monitors apps that you have explicitly chosen to block and does not collect or transmit any sensitive information from other apps."
+          title: "🔐 What Information We Collect",
+          content: "Blockit does not collect, store, or share any personal information. The app runs entirely offline and does not require login or account creation."
         },
         {
-          title: "Data Retention",
-          content: "Usage statistics and blocking data are retained on your device until you choose to delete them or uninstall the app. You can clear specific data ranges or all historical data at any time through the app's settings. No data is retained on external servers as all processing happens locally on your device."
+          title: "⚙️ Permissions We Use and Why",
+          content: "To offer core features that help users stay focused, Blockit requests the following permissions:\n\n• Accessibility Service: Required to detect and block specific UI components like Shorts/Reels from apps (e.g., YouTube, Instagram). We use this only to help block distractions. No data is read, stored, or shared.\n\n• Usage Access: Required to identify which apps are running so they can be blocked if needed.\n\n• Battery Optimization Exemption: Required to allow Blockit to run uninterrupted in the background for real-time blocking.\n\n• Notification Permission: Used to display helpful reminders when blocking starts, ends, or focus mode is active.\n\n• Website Blocking (via in-app browser/WebView): Websites are blocked using local filters. We do not collect, store, or transmit any URLs or browsing data."
         },
         {
-          title: "Changes to This Policy",
-          content: "We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any changes will be communicated through app updates, and the 'Last Updated' date will be revised accordingly. We encourage you to review this policy periodically to stay informed about how we protect your privacy."
+          title: "👁️‍🗨️ Accessibility Service Disclosure (Google Play Compliance)",
+          content: "Blockit requests the Accessibility Service permission only for the following core features:\n\n• Detecting which apps and screens are currently active to block distracting content (such as Shorts, Reels, or other specified apps)\n• Automatically displaying a block overlay to help you stay focused\n\nWhat accessibility data Blockit receives:\n• Limited information about which app or UI screen is in use (the app package name, some non-personal accessibility events such as window/state changes)\n\nWhat Blockit does NOT access or collect:\nThe app does not read, log, store, or transmit:\n• Text contents displayed on your device\n• Personal information, messages, passwords, payment details\n• Input fields, audio, or touch input\n\nAll accessibility events are processed entirely on your device and are never collected, uploaded, sold, or shared with anyone.\n\nGranting Accessibility permission is completely optional, but some focus & blocking features will not work without it. You can continue to use other features without granting this permission.\n\nHow to revoke: At any time, you can disable Accessibility permission for Blockit in your device's Android Settings under: Settings > Accessibility > Installed Services > Blockit > Disable.\n\nBlockit strictly follows the Google Play User Data Policy for Accessibility and user privacy."
+        },
+        {
+          title: "🔒 Data Handling & Security",
+          content: "• Blockit functions completely on-device\n• It does not connect to any server, nor transmit data over the internet\n• No personal data is logged, collected, shared, or monetized"
+        },
+        {
+          title: "🚫 No Third-Party Services",
+          content: "Blockit does not use ads, analytics SDKs, or third-party tracking services."
+        },
+        {
+          title: "🛡️ User Control",
+          content: "You are always in control.\n\n• You can revoke any permission at any time via system settings\n• The app continues to function (with limited features) even without some permissions"
+        },
+        {
+          title: "📝 Changes to This Policy",
+          content: "We may occasionally update this Privacy Policy to reflect improvements. All changes will be posted within the app or on our official GitHub page."
+        },
+        {
+          title: "🧠📵 Thank You",
+          content: "Thank you for choosing Blockit to help reduce distractions and stay focused!"
         }
       ]
     }
-  },
+  }
   // You can easily add more privacy policies here for other projects
   // arogyasathi: {
   //   appName: "ArogyaSathi",
@@ -75,6 +84,14 @@ export const privacyPolicies: Record<string, PrivacyPolicyData> = {
   //   }
   // }
 };
+  // You can easily add more privacy policies here for other projects
+  // arogyasathi: {
+  //   appName: "ArogyaSathi",
+  //   lastUpdated: "September 7, 2025",
+  //   content: {
+  //     // Add ArogyaSathi privacy policy content here
+  //   }
+  // }
 
 export const getPrivacyPolicy = (appSlug: string): PrivacyPolicyData | null => {
   return privacyPolicies[appSlug.toLowerCase()] || null;

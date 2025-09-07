@@ -5,6 +5,16 @@ import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { getPrivacyPolicy, getAllPrivacyPolicies } from "@/data/privacyPolicyData";
 
+// Helper function to format content with line breaks
+const formatContent = (content: string) => {
+  return content.split('\n').map((line, index) => (
+    <span key={index}>
+      {line}
+      {index < content.split('\n').length - 1 && <br />}
+    </span>
+  ));
+};
+
 const PrivacyPolicy = () => {
   const { appName } = useParams<{ appName: string }>();
   const navigate = useNavigate();
@@ -94,9 +104,9 @@ const PrivacyPolicy = () => {
           <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {policy.content.introduction}
-              </p>
+              <div className="text-muted-foreground leading-relaxed">
+                {formatContent(policy.content.introduction)}
+              </div>
             </section>
 
             <section className="mb-8">
@@ -123,16 +133,16 @@ const PrivacyPolicy = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Data Sharing</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {policy.content.dataSharing}
-              </p>
+              <div className="text-muted-foreground leading-relaxed">
+                {formatContent(policy.content.dataSharing)}
+              </div>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Data Security</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {policy.content.dataSecurity}
-              </p>
+              <div className="text-muted-foreground leading-relaxed">
+                {formatContent(policy.content.dataSecurity)}
+              </div>
             </section>
 
             <section className="mb-8">
@@ -149,17 +159,17 @@ const PrivacyPolicy = () => {
             {policy.content.additionalSections?.map((section, index) => (
               <section key={index} className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  {section.content}
-                </p>
+                <div className="text-muted-foreground leading-relaxed">
+                  {formatContent(section.content)}
+                </div>
               </section>
             ))}
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {policy.content.contact}
-              </p>
+              <div className="text-muted-foreground leading-relaxed">
+                {formatContent(policy.content.contact)}
+              </div>
             </section>
           </CardContent>
         </Card>

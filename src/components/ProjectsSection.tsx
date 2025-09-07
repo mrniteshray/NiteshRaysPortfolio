@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Download, Github, Link, Play, ArrowRight } from 'lucide-react';
+import { Download, Github, Link as LinkIcon, Play, ArrowRight, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const androidProjects = [
   {
@@ -13,7 +14,9 @@ const androidProjects = [
     tags: ['Kotlin', 'Jetpack Compose', 'AccessibilityService API', 'MVVM', 'Coroutines'],
     github: 'https://github.com/mrniteshray/Blockit',
     playStoreUrl: undefined,
-    downloadlink: "https://github.com/mrniteshray/Blockit/releases/latest"
+    downloadlink: "https://github.com/mrniteshray/Blockit/releases/latest",
+    hasPrivacyPolicy: true,
+    privacyPolicySlug: 'blockit'
   },
   {
     title: 'ArogyaSathi',
@@ -22,7 +25,8 @@ const androidProjects = [
     tags: ['Kotlin','Jetpack Compose', 'Speech-To-Text', 'Text-to-Speech', 'Firebase','MVVM', 'Coroutines', 'Gemini API'],
     github: 'https://github.com/mrniteshray/ArogyaSathi',
     playStoreUrl: undefined,
-    downloadlink: "https://github.com/mrniteshray/ArogyaSathi/releases/download/v1/ArogyaSathi.apk"    
+    downloadlink: "https://github.com/mrniteshray/ArogyaSathi/releases/download/v1/ArogyaSathi.apk",
+    hasPrivacyPolicy: false
   },
   {
     title: 'MyWallet',
@@ -31,7 +35,8 @@ const androidProjects = [
     tags: ['Kotlin','XML', 'Firebase','AndroidMP Chart Library','Google SignIn'],
     github: 'https://github.com/mrniteshray/MyWallet',
     playStoreUrl: undefined,
-    downloadlink: "https://github.com/mrniteshray/MyWallet/releases/download/v1/MyWallet.apk"    
+    downloadlink: "https://github.com/mrniteshray/MyWallet/releases/download/v1/MyWallet.apk",
+    hasPrivacyPolicy: false
   }
   ,
   {
@@ -41,7 +46,8 @@ const androidProjects = [
     tags: ['Kotlin','Jetpack Compose', 'AndroidView', 'MediaStore','MVVM'],
     github: 'https://github.com/mrniteshray/HandWritefy',
     playStoreUrl: undefined,
-    downloadlink: "https://github.com/mrniteshray/HandWritefy/releases/download/v1/HandWritefy.apk"    
+    downloadlink: "https://github.com/mrniteshray/HandWritefy/releases/download/v1/HandWritefy.apk",
+    hasPrivacyPolicy: false
   }
 ];
 
@@ -95,6 +101,13 @@ const ProjectCard = ({ project }) => {
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <Github size={16} className="mr-2" /> Code
               </a>
+            </Button>
+          )}
+          {project.hasPrivacyPolicy && (
+            <Button variant="outline" size="sm" asChild>
+              <Link to={`/privacypolicy/${project.privacyPolicySlug}`}>
+                <Shield size={16} className="mr-2" /> Privacy Policy
+              </Link>
             </Button>
           )}
           {project.playStoreUrl && (

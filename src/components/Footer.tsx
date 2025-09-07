@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -17,8 +18,16 @@ const Footer = () => {
             </p>  
           </div>
           
-          <div className="text-sm text-muted-foreground">
-            <p>© {year} Nitesh Ray. All Rights Reserved.</p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <Link 
+              to="/privacypolicy" 
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <div className="text-sm text-muted-foreground">
+              <p>© {year} Nitesh Ray. All Rights Reserved.</p>
+            </div>
           </div>
         </div>
       </div>

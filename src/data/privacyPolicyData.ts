@@ -19,7 +19,7 @@ export interface PrivacyPolicyData {
 export const privacyPolicies: Record<string, PrivacyPolicyData> = {
   blockit: {
     appName: "Blockit",
-    lastUpdated: "August 24, 2025",
+    lastUpdated: "September 07, 2025",
     content: {
       introduction: "Welcome to Blockit! Your privacy is important to us. This policy explains how Blockit handles permissions and data to keep your experience safe, transparent, and focused.",
       dataCollection: [

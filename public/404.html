@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nitesh Ray - Android Developer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Fallback for client-side routing
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.location.pathname !== '/') {
+          window.history.replaceState({}, '', window.location.href);
+        }
+      });
+    </script>
+  </body>
+</html>

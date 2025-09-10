@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { getPrivacyPolicy, getAllPrivacyPolicies } from "@/data/privacyPolicyData";
+import { useEffect } from "react";
 
 // Helper function to format content with line breaks
 const formatContent = (content: string) => {
+  if (!content) return null;
   return content.split('\n').map((line, index) => (
     <span key={index}>
       {line}
@@ -19,12 +21,36 @@ const PrivacyPolicy = () => {
   const { appName } = useParams<{ appName: string }>();
   const navigate = useNavigate();
 
-  // If no app name is provided, show general privacy policy
-  if (!appName) {
-    const allPolicies = getAllPrivacyPolicies();
-    
+  // Debug logging
+  useEffect(() => {
+    console.log('PrivacyPolicy component mounted');
+    console.log('appName:', appName);
+    console.log('window.location:', window.location.href);
+    if (appName) {
+      const policy = getPrivacyPolicy(appName);
+      console.log('policy found:', !!policy);
+      console.log('policy data:', policy);
+    }
+  }, [appName]);
+
+  // Early return for debugging
+  if (appName === 'debug') {
     return (
-      <div className="min-h-screen bg-background">
+      <div style={{ padding: '20px', minHeight: '100vh', backgroundColor: 'white', color: 'black' }}>
+        <h1>Debug Privacy Policy</h1>
+        <p>Component is working!</p>
+        <p>App Name: {appName}</p>
+      </div>
+    );
+  }
+
+  try {
+    // If no app name is provided, show general privacy policy
+    if (!appName) {
+      const allPolicies = getAllPrivacyPolicies();
+      
+      return (
+        <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
           <Button
             variant="ghost"
@@ -176,6 +202,28 @@ const PrivacyPolicy = () => {
       </div>
     </div>
   );
+  } catch (error) {
+    console.error('Error in PrivacyPolicy component:', error);
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="max-w-md mx-auto">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-center text-red-600">
+              Error Loading Privacy Policy
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="text-muted-foreground mb-4">
+              Sorry, there was an error loading the privacy policy page.
+            </p>
+            <Button onClick={() => navigate('/')}>
+              Go Back Home
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 };
 
 export default PrivacyPolicy;

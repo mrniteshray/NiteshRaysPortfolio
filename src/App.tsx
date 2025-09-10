@@ -8,6 +8,8 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TestPrivacyPolicy from "./pages/TestPrivacyPolicy";
+import DiagnosticPrivacyPolicy from "./pages/DiagnosticPrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/privacypolicy/:appName" element={<PrivacyPolicy />} />
+            <Route path="/test-privacy/:appName" element={<TestPrivacyPolicy />} />
+            <Route path="/diagnostic/:appName" element={<DiagnosticPrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

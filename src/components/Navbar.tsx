@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -6,7 +5,6 @@ import ThemeToggle from './ThemeToggle';
 
 const navItems = [
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ];
@@ -17,28 +15,22 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-sm py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border/50' : 'bg-transparent'
       }`}
     >
-      <div className="container flex items-center justify-between">
-        <a href="#" className="text-lg font-bold">
-          Nitesh<span className="text-primary">.kt</span>
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="#" className="text-xl font-light text-foreground">
+          Nitesh Ray
         </a>
 
         {/* Desktop Navigation */}
@@ -47,47 +39,45 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.name}
             </a>
           ))}
           <ThemeToggle />
-          <a href="/Nitesh Resume.pdf" download>
-  <Button>Resume</Button>
-</a>
-
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <button 
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </Button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-background shadow-lg md:hidden animate-fade-in">
-            <div className="container py-4 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium py-2 hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <a href="/Nitesh Resume.pdf" download className="w-full"> <Button className="w-full">Resume</Button></a>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border/50">
+          <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

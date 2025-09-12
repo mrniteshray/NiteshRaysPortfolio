@@ -54,7 +54,7 @@ export const portfolioData: PortfolioData = {
       description: "Blockit is an open-source Android app built to help you block distractions like short videos, apps, and websites — so you can focus on what actually matters.",
       technologies: ["Kotlin", "Jetpack Compose", "AccessibilityService API", "MVVM", "Coroutines"],
       github: "https://github.com/mrniteshray/Blockit",
-      playStoreUrl: undefined,
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.niteshray.blockit", // Example Play Store URL
       downloadlink : "https://github.com/mrniteshray/Blockit/releases/download/v1/Blockit.apk"
     },
     {
@@ -62,7 +62,7 @@ export const portfolioData: PortfolioData = {
       description: "ArogyaSathi is an AI-powered voice health assistant that that helps users ask health-related queries using voice in Multiple Languages.",
       technologies: ["Kotlin","Jetpack Compose", "Speech-To-Text API", "Text-to-Speech API", "Firebase","MVVM", "Coroutines" , "Gemini API"],
       github: "https://github.com/mrniteshray/ArogyaSathi",
-      playStoreUrl: undefined,
+      playStoreUrl: undefined, // No Play Store link yet
       downloadlink : "https://github.com/mrniteshray/ArogyaSathi/releases/download/v1/ArogyaSathi.apk"    
     },
     {
@@ -70,7 +70,7 @@ export const portfolioData: PortfolioData = {
       description: "Handwritefy helps students and professionals save hours of time by generating realistic handwritten pages from digital Handwritten style text",
       technologies: ["Kotlin","Jetpack Compose", "AndroidView", "MediaStore","MVVM"],
       github: "https://github.com/mrniteshray/HandWritefy",
-      playStoreUrl: undefined,
+      playStoreUrl: undefined, // No Play Store link yet
       downloadlink : "https://github.com/mrniteshray/HandWritefy/releases/download/v1/HandWritefy.apk"    
     }
   ],

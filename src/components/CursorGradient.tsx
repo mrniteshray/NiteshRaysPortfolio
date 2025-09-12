@@ -31,7 +31,7 @@ const CursorGradient = () => {
     >
       {/* Main gradient blob */}
       <div 
-        className={`absolute w-[400px] h-[400px] rounded-full bg-gradient-to-br from-primary/20 via-compose/20 to-kotlin/20 blur-3xl transition-opacity duration-300 ${isVisible ? 'opacity-40' : 'opacity-0'}`}
+        className={`absolute w-[400px] h-[400px] rounded-full bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 blur-3xl transition-opacity duration-300 ${isVisible ? 'opacity-60' : 'opacity-0'}`}
         style={{
           transform: `translate(${mousePosition.x - 200}px, ${mousePosition.y - 200}px)`,
           transition: 'transform 0.2s ease-out',

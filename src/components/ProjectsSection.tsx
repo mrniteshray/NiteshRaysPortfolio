@@ -12,7 +12,7 @@ const androidProjects = [
     image: 'blockit',
     tags: ['Kotlin', 'Jetpack Compose', 'AccessibilityService API', 'MVVM', 'Coroutines'],
     github: 'https://github.com/mrniteshray/Blockit',
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.niteshray.blockit",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=xcom.niteshray.xapps.xblockit",
     downloadlink: "https://github.com/mrniteshray/Blockit/releases/latest"
   },
   {

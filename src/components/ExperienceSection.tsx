@@ -9,7 +9,7 @@ const experienceData = [
     title: "Android Developer Intern",
     company: "Indilingo Labs LLP",
     location: "Remote",
-    period: "July 2024 - Present",
+    period: "July 2025 - Present",
     type: "Internship",
     description: "Contributed to enhancing the Indilingo app with modern features and a cleaner, user-friendly design.",
     achievements: [

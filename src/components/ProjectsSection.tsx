@@ -45,23 +45,23 @@ const androidProjects = [
   }
 ];
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, index }) => {
   return (
-    <Card className="group overflow-hidden border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300">
+    <Card className="overflow-hidden border-0 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-lg opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}>
       <CardContent className="p-0">
         {/* Image Section */}
         <div className="aspect-video overflow-hidden bg-muted/20">
           <img
             src={`/${project.image.toLowerCase().replace(/ /g, '')}.png`}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover"
           />
         </div>
         
         {/* Content Section */}
         <div className="p-6 space-y-4">
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            <h3 className="text-xl font-semibold text-foreground">
               {project.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -75,7 +75,7 @@ const ProjectCard = ({ project }) => {
               <Badge
                 key={idx}
                 variant="secondary"
-                className="text-xs px-2 py-1 bg-secondary/60 hover:bg-secondary/80 transition-colors"
+                className="text-xs px-2 py-1 bg-secondary/60"
               >
                 {tag}
               </Badge>
@@ -139,7 +139,7 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {androidProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
 

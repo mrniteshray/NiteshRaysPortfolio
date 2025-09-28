@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -32,6 +32,12 @@ const HeroSection = () => {
           <Button variant="outline" asChild className="w-full sm:w-auto px-8 h-12 hover:scale-105 transition-transform duration-200">
             <a href="mailto:niteshr14321@gmail.com">
               Get In Touch
+            </a>
+          </Button>
+          <Button variant="secondary" asChild className="w-full sm:w-auto px-8 h-12 hover:scale-105 transition-transform duration-200">
+            <a href="/NiteshRay Resume.pdf" download="NiteshRay_Resume.pdf">
+              <Download size={18} className="mr-2" />
+              Download Resume
             </a>
           </Button>
         </div>

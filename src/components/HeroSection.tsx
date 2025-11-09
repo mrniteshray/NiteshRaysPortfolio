@@ -35,7 +35,7 @@ const HeroSection = () => {
             </a>
           </Button>
           <Button variant="secondary" asChild className="w-full sm:w-auto px-8 h-12 hover:scale-105 transition-transform duration-200">
-            <a href="/NiteshRay Resume.pdf" download="NiteshRay_Resume.pdf">
+            <a href="/NiteshRay Resume.pdf" download="Nitesh Resume.pdf">
               <Download size={18} className="mr-2" />
               Download Resume
             </a>

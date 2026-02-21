@@ -50,12 +50,20 @@ export const portfolioData: PortfolioData = {
   
   projects: [
     {
-      name: "Blockit",
-      description: "Blockit is an open-source Android app built to help you block distractions like short videos, apps, and websites — so you can focus on what actually matters.",
+      name: "FlowBit",
+      description: "FlowBit is a productivity app designed to break scroll addiction. It features a Pomodoro timer, focus sounds, and powerful blocking for Reels, Shorts, apps, and websites.",
       technologies: ["Kotlin", "Jetpack Compose", "AccessibilityService API", "MVVM", "Coroutines"],
       github: "https://github.com/mrniteshray/Blockit",
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.niteshray.blockit", // Example Play Store URL
+      playStoreUrl: "https://play.google.com/store/apps/details?id=xcom.niteshray.xapps.xblockit",
       downloadlink : "https://github.com/mrniteshray/Blockit/releases/download/v1/Blockit.apk"
+    },
+    {
+      name: "SliqSwipe",
+      description: "SliqSwipe organizes your gallery with a Tinder-like swipe interface. Delete unwanted photos/videos by swiping left, keep by swiping right, and sort by month.",
+      technologies: ["Kotlin", "Jetpack Compose", "MediaStore API", "MVVM", "Coroutines"],
+      github: "https://github.com/mrniteshray/SliqSwipe",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=xcom.niteshray.xapps.sliqswipe",
+      downloadlink : "https://github.com/mrniteshray/SliqSwipe/releases/latest"
     },
     {
       name: "ArogyaSathi",

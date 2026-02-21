@@ -7,9 +7,24 @@ const experienceData = [
   {
     id: 1,
     title: "Android Developer Intern",
+    company: "Greedy Game Media Pvt Ltd",
+    location: "Bangalore (Onsite)",
+    period: "Jan 2026 - Present",
+    type: "Internship",
+    description: "Contributing to the development and optimization of high-performance Android applications at an AdTech startup.",
+    achievements: [
+      "Implemented Firebase Analytics with custom event instrumentation and funnel analysis to identify dropoffs and improve user retention by 40%.",
+      "Optimized video playback startup by implementing pre-caching and loading optimizations, reducing initial play latency by 30–40%.",
+      "Contributed to building a PDF utility app from scratch, implementing 12+ core features across document security, scanning, and monetization flows."
+    ],
+    technologies: ["Kotlin", "Android SDK", "Firebase Analytics", "ExoPlayer/Media3", "Room", "Coroutines", "MVVM"]
+  },
+  {
+    id: 2,
+    title: "Android Developer Intern",
     company: "Indilingo Labs LLP",
     location: "Remote",
-    period: "July 2025 - Present",
+    period: "July 2025 - Dec 2025",
     type: "Internship",
     description: "Contributed to enhancing the Indilingo app with modern features and a cleaner, user-friendly design.",
     achievements: [

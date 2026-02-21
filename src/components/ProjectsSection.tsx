@@ -8,15 +8,26 @@ import { portfolioData } from '@/data/portfolioData';
 
 const androidProjects = [
   {
-    title: 'Blockit',
-    longDesc: 'Blockit is an open-source Android app built to help you block distractions like short videos, apps, and websites — so you can focus on what actually matters.',
-    image: 'blockit',
+    title: 'FlowBit',
+    longDesc: 'FlowBit boosts productivity with a Pomodoro timer and focus sounds. It helps break scroll addiction by blocking Reels, Shorts, distracting apps, and websites, allowing you to reclaim your time.',
+    image: 'flowbit',
     tags: ['Kotlin', 'Jetpack Compose', 'AccessibilityService API', 'MVVM', 'Coroutines'],
     github: 'https://github.com/mrniteshray/Blockit',
     playStoreUrl: "https://play.google.com/store/apps/details?id=xcom.niteshray.xapps.xblockit",
     downloadlink: "https://github.com/mrniteshray/Blockit/releases/latest",
     featured: true,
     downloads: '100+'
+  },
+  {
+    title: 'SliqSwipe',
+    longDesc: 'Tinder for your gallery! Delete unwanted photos, videos, and audios by swiping left, keep by swiping right. Organize everything month-wise for a cleaner device.',
+    image: 'sliqswipe',
+    tags: ['Kotlin', 'Jetpack Compose', 'MediaStore API', 'MVVM', 'Coroutines'],
+    github: 'https://github.com/mrniteshray/SliqSwipe',
+    playStoreUrl: "https://play.google.com/store/apps/details?id=xcom.niteshray.xapps.sliqswipe",
+    downloadlink: "https://github.com/mrniteshray/SliqSwipe/releases/latest",
+    featured: true,
+    downloads: '50+'
   },
   {
     title: 'ArogyaSathi',

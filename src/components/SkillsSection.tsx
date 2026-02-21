@@ -76,13 +76,13 @@ const skillCategories = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="section bg-gradient-to-b from-muted/10 to-muted/30 py-16">
+    <section id="skills" className="py-24 px-4 bg-muted/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="section-title text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 inline-block">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Skills & Expertise
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Technologies and tools I work with to build exceptional Android applications
           </p>
         </div>
@@ -91,21 +91,22 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-muted-foreground/10 hover:border-primary/20"
+              className="group hover:shadow-md transition-all duration-300 border border-border/50 bg-card hover:border-primary/20"
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br from-primary/10 to-${category.color}/10`}>
-                    <category.icon className={`w-7 h-7 ${category.color}`} />
+                  <div className={`p-2.5 rounded-lg bg-muted/50 group-hover:bg-primary/5 transition-colors duration-300`}>
+                    <category.icon className={`w-6 h-6 ${category.color}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+                  <h3 className="font-semibold text-lg text-foreground">{category.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, idx) => (
-                    <Badge
-                      key={idx}
-                      variant="outline"
-                      className="bg-background/80 hover:bg-primary/10 transition-colors text-foreground/90 font-medium px-3 py-1.5 rounded-lg border-muted-foreground/20 shadow-sm"
+                    <Badge 
+                      key={idx} 
+                      variant="secondary" 
+                      className="font-normal text-xs px-2.5 py-1 bg-muted/30 text-muted-foreground border border-transparent hover:border-primary/20 transition-all duration-200"
                     >
                       {skill}
                     </Badge>

@@ -5,37 +5,31 @@ import { portfolioData } from '@/data/portfolioData';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="container mx-auto max-w-4xl text-center">
-        {/* Header */}
-        <div className="space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-foreground">
-            Get In Touch
+    <section id="contact" className="py-24 px-4 bg-background">
+      <div className="container mx-auto max-w-3xl text-center">
+        <div className="space-y-6 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            Let's work together
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Let's collaborate on your next Android project. I'm always interested in discussing new opportunities and innovative ideas.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            I'm currently available for freelance work and open to new opportunities. 
+            If you have a project in mind or just want to say hi, get in touch!
           </p>
         </div>
 
-        {/* Contact Info */}
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-muted/50 rounded-full">
-            <Mail size={20} className="text-muted-foreground" />
-            <a 
-              href={`mailto:${portfolioData.contact.email}`}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              {portfolioData.contact.email}
-            </a>
-          </div>
+        <div className="flex flex-col items-center gap-6">
+          <Button asChild size="lg" className="rounded-full px-8 h-12 text-base">
+              <a href={`mailto:${portfolioData.contact.email}`}>
+                <Mail className="mr-2 h-4 w-4" /> Say Hello
+              </a>
+          </Button>
 
-          {/* Social Links */}
-          <div className="flex justify-center gap-6">
+          <div className="flex items-center gap-6 mt-8">
             <a 
               href={portfolioData.contact.github} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
             >
               <Github size={24} />
             </a>
@@ -43,20 +37,15 @@ const ContactSection = () => {
               href={portfolioData.contact.linkedin} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full"
             >
               <Linkedin size={24} />
             </a>
           </div>
-
-          {/* CTA Button */}
-          <div className="pt-8">
-            <Button asChild size="lg" className="px-8">
-              <a href={`mailto:${portfolioData.contact.email}`}>
-                Start a Conversation
-              </a>
-            </Button>
-          </div>
+          
+           <p className="text-sm text-muted-foreground mt-8">
+            © {new Date().getFullYear()} Nitesh Ray. All rights reserved.
+          </p>
         </div>
       </div>
     </section>
